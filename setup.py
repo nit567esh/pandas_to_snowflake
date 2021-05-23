@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='pandas_to_snowflake',
-    version='1.1.0',
+    version='2.0.1',
     author="Nitesh Kumar",
     author_email="nit567esh@gmail.com",
     description="Bulk loading pandas dataframe to snowflake table",
