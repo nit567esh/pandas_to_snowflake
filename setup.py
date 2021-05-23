@@ -11,7 +11,7 @@ setup(
     version='2.0.1',
     author="Nitesh Kumar",
     author_email="nit567esh@gmail.com",
-    description="Bulk Loading pandas dataframe to snowflake table",
+    description="Bulk loading pandas dataframe to snowflake table",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/nit567esh/pandas_to_snowflake",
