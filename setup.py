@@ -1,34 +1,20 @@
-import pathlib
 from setuptools import setup
 
-# The directory containing this file
-HERE = pathlib.Path(__file__).parent
+# read the contents of your README file
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
-# The text of the README file
-README = (HERE / "README.md").read_text()
-
-# This call to setup() does all the work
 setup(
-    name="pandas_to_snowflake",
-    version="1.0.0",
-    description="Bulk loading pandas dataframe to snowflake table",
-    long_description=README,
-    long_description_content_type="text/markdown",
-    url="https://github.com/nit567esh/pandas_to_snowflake",
+    name='pandas_to_snowflake',
+    version='1.1.0',
     author="Nitesh Kumar",
     author_email="nit567esh@gmail.com",
-    license="MIT",
-    classifiers=[
-        "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
-    ],
-    packages=["pandas_to_snowflake"],
-    include_package_data=True,
-    install_requires=["pandas", "snowflake.connector"],
-    entry_points={
-        "console_scripts": [
-            "realpython=pandas_to_snowflake.pandas_to_snowflake:pandas_to_snowflake",
-        ]
-    },
+    description="Bulk loading pandas dataframe to snowflake table",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/nit567esh/pandas_to_snowflake",
+    packages=['pandas_to_snowflake'],
+    install_requires=["pandas"]
 )
