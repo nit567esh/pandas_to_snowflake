@@ -50,6 +50,6 @@ sf_append(dataframe, snowflake_auth, schema, table)
     Example - ps.sf_append(dataframe=iris, snowflake_auth = snowflake_auth, schema = 'analytics', table = 'iris'")
 
 sf_upsert(dataframe, snowflake_auth, schema, table, upsertkey=('cols',....))
-    Example - sf_upsert(dataframe=order, snowflake_auth = snowflake_auth, schema = 'analytics', table='order', upsertkey=('date','product'))
+    Example - ps.sf_upsert(dataframe=order, snowflake_auth = snowflake_auth, schema = 'analytics', table='order', upsertkey=('date','product'))
 
 ```
