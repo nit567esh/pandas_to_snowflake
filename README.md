@@ -35,11 +35,21 @@ You’ll have available 3 functions fro different kind of operations:
 `3. sf_upsert` - You can insert and update the existing snowflake table using contents of the pandas data frame.
 
 ``` r
-# Step 1: Configure snowflake authentication
+# Step 1: Import package 
+import pandas_to_snowflake as ps
+
+# Step 2: Configure snowflake authentication
 snowflake_auth=(user, password, account, warehouse, database, port)
 
-# Step 2: Use sf_create, sf_append or sf_upsert
-sf_create(snowflake_auth, sql_ddl)
+# Step 3: Use sf_create, sf_append or sf_upsert
+#sf_create(snowflake_auth, sql_ddl)
+Example - ps.sf_create(snowflake_auth = snowflake_auth, 
+             sql_ddl = "create table test (custkey number default null, orderdate date default null)")
+
 sf_append(dataframe, snowflake_auth, schema, table)
+Example - ps.sf_append(dataframe=iris, snowflake_auth = snowflake_auth, schema = 'analytics', table = 'iris'")
+
 sf_upsert(dataframe, snowflake_auth, schema, table, upsertkey=('cols',....))
+Example - sf_upsert(dataframe=order, snowflake_auth = snowflake_auth, schema = 'analytics', table='order', upsertkey=('date','product'))
+
 ```
