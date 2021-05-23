@@ -42,14 +42,14 @@ import pandas_to_snowflake as ps
 snowflake_auth=(user, password, account, warehouse, database, port)
 
 # Step 3: Use sf_create, sf_append or sf_upsert
-#sf_create(snowflake_auth, sql_ddl)
-Example - ps.sf_create(snowflake_auth = snowflake_auth, 
+sf_create(snowflake_auth, sql_ddl)
+    Example - ps.sf_create(snowflake_auth = snowflake_auth, 
              sql_ddl = "create table test (custkey number default null, orderdate date default null)")
 
 sf_append(dataframe, snowflake_auth, schema, table)
-Example - ps.sf_append(dataframe=iris, snowflake_auth = snowflake_auth, schema = 'analytics', table = 'iris'")
+    Example - ps.sf_append(dataframe=iris, snowflake_auth = snowflake_auth, schema = 'analytics', table = 'iris'")
 
 sf_upsert(dataframe, snowflake_auth, schema, table, upsertkey=('cols',....))
-Example - sf_upsert(dataframe=order, snowflake_auth = snowflake_auth, schema = 'analytics', table='order', upsertkey=('date','product'))
+    Example - sf_upsert(dataframe=order, snowflake_auth = snowflake_auth, schema = 'analytics', table='order', upsertkey=('date','product'))
 
 ```
